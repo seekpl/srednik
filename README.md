@@ -32,12 +32,15 @@ python3 -m http.server 8000
 
 Następnie otwórz http://localhost:8000.
 
+## Dane kontaktowe
+
+E-mail sebastian.biel@me.com, telefon 790 700 061, NIP 8681879901 – w stopce, w sekcji kontaktu, w danych strukturalnych (JSON-LD) i w polityce prywatności.
+
 ## Do uzupełnienia przed publikacją
 
-1. **Dane kontaktowe** – w stopce `index.html` zamień `[E-MAIL]`, `[TELEFON]` i `[NIP]`.
-2. **Wysyłka formularza** – w `index.html` wpisz adres usługi formularzy w atrybucie `action` formularza (`<form class="form" data-form action="" …>`), np. Formspree, Basin albo własny skrypt PHP. Skrypt wysyła dane metodą POST (`strona`, `email`, `wiadomosc`) i oczekuje odpowiedzi 2xx. Dopóki `action` jest pusty, formularz działa w trybie pokazowym: po walidacji pokazuje podziękowanie, ale niczego nie wysyła.
-3. **Polityka prywatności** – uzupełnij pola oznaczone na żółto w `polityka-prywatnosci.html` i daj tekst do sprawdzenia prawnikowi.
-4. **Adres strony w meta tagach** – po wyborze domeny warto zmienić `og:image` na pełny adres (np. `https://twojadomena.pl/assets/img/og.png`).
+1. **Wysyłka formularza** – w `index.html` wpisz adres usługi formularzy w atrybucie `action` formularza (`<form class="form" data-form action="" …>`), np. Formspree, Basin albo własny skrypt PHP. Skrypt wysyła dane metodą POST (`strona`, `email`, `wiadomosc`) i oczekuje odpowiedzi 2xx. Dopóki `action` jest pusty, formularz działa w trybie pokazowym: po walidacji pokazuje podziękowanie, ale niczego nie wysyła.
+2. **Polityka prywatności** – uzupełnij pola oznaczone na żółto w `polityka-prywatnosci.html` i daj tekst do sprawdzenia prawnikowi.
+3. **Adres strony w meta tagach** – po wyborze domeny warto zmienić `og:image` na pełny adres (np. `https://twojadomena.pl/assets/img/og.png`).
 
 ## Licencje bibliotek
 

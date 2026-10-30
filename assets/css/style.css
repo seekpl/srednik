@@ -740,6 +740,9 @@ html:not(.anim) .process__fill span { transform: none; }
 .contact .lead { margin-top: 26px; color: #E4E6E0; }
 .contact__facts { list-style: none; margin: 44px 0 0; padding: 0; border-top: 1px solid #3A3F48; max-width: 30em; }
 .contact__facts li { display: flex; align-items: baseline; gap: 18px; padding: 16px 0; border-bottom: 1px solid #3A3F48; font-size: 16px; color: #C9CDC4; }
+.contact__direct { margin: 28px 0 0; font-size: 17px; line-height: 1.7; color: #C9CDC4; }
+.contact__direct a { color: var(--peri); font-family: var(--sans); font-weight: 600; text-underline-offset: 4px; }
+.contact__direct a:hover { color: #FFFFFF; }
 .contact__facts b { min-width: 5.2em; font: 700 26px var(--sans); color: var(--peri); letter-spacing: -.02em; }
 
 .form {
@@ -809,6 +812,8 @@ html:not(.anim) .process__fill span { transform: none; }
 .foot__nav a { display: inline-flex; align-items: center; min-height: 44px; font: 500 15px var(--sans); color: var(--paper); text-decoration: none; background: linear-gradient(var(--peri), var(--peri)) 0 calc(100% - 10px) / 0 1.5px no-repeat; transition: background-size .45s var(--ease), color .3s; }
 .foot__nav a:hover { color: var(--peri); background-size: 100% 1.5px; }
 .foot__legal { display: flex; flex-wrap: wrap; gap: 8px 26px; padding: 26px 0; font: 14px var(--sans); color: #C9CDC4; }
+.foot__legal a { color: inherit; text-decoration: underline; text-decoration-color: #4B5059; text-underline-offset: 4px; transition: color .3s, text-decoration-color .3s; }
+.foot__legal a:hover { color: var(--peri); text-decoration-color: currentColor; }
 .foot__giant { color: #262A31; line-height: 0; padding: 0 var(--gut); margin-top: clamp(24px, 4vw, 56px); }
 .foot__giant svg { width: 100%; height: auto; margin: 0 auto; max-width: 1600px; transform-origin: 50% 100%; }
 .foot__giant-comma { fill: var(--blue); }
