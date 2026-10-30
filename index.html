@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="pl" class="no-js" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Średnik by .dot&nbsp;– modernizacja stron internetowych</title>
+<meta name="description" content="Nie budujemy stron od zera. Poprawiamy te, które już masz. Audyt strony od 990&nbsp;zł netto w 7&nbsp;dni roboczych, modernizacja na kopii strony i opieka po publikacji.">
+<meta name="theme-color" content="#FBFBF8">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Średnik by .dot">
+<meta property="og:title" content="Średnik by .dot – Twoja strona ma ciąg dalszy;">
+<meta property="og:description" content="Modernizujemy istniejące strony firm z całej Polski. Audyt w stałej cenie, poprawki na kopii strony, opieka po publikacji.">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/literata-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  (function (d) {
+    d.classList.remove('no-js'); d.classList.add('js');
+    var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!rm) d.classList.add('anim');
+    var seen = false; try { seen = sessionStorage.getItem('srednik-intro') === '1'; } catch (e) {}
+    if (!rm && !seen) d.classList.add('has-intro');
+    // Jeśli skrypty się nie wczytają, pokaż stronę bez animacji
+    setTimeout(function () { if (!window.__sr) d.classList.remove('anim', 'has-intro'); }, 3500);
+  })(document.documentElement);
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Średnik by .dot",
+  "slogan": "Twoja strona ma ciąg dalszy;",
+  "description": "Modernizacja istniejących stron internetowych: audyt, modernizacja i opieka nad stroną.",
+  "areaServed": { "@type": "Country", "name": "Polska" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Rzezawa", "addressCountry": "PL" },
+  "founder": { "@type": "Person", "name": "Sebastian Biel" },
+  "parentOrganization": { "@type": "Organization", "name": ".dot – Studio Reklamy" },
+  "makesOffer": [
+    { "@type": "Offer", "name": "Diagnoza – audyt strony", "priceSpecification": { "@type": "PriceSpecification", "minPrice": 990, "priceCurrency": "PLN", "valueAddedTaxIncluded": false } },
+    { "@type": "Offer", "name": "Modernizacja strony", "priceSpecification": { "@type": "PriceSpecification", "minPrice": 3900, "priceCurrency": "PLN", "valueAddedTaxIncluded": false } },
+    { "@type": "Offer", "name": "Opieka nad stroną", "priceSpecification": { "@type": "UnitPriceSpecification", "minPrice": 240, "priceCurrency": "PLN", "unitText": "miesiąc", "valueAddedTaxIncluded": false } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- Kształty logo używane w kilku miejscach strony -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="logo-word" d="M55.1 202.6Q43.2 202.6 32.6 199.1Q22 195.6 14.8 188.3Q7.7 181 5.7 169.2L32.2 164Q33.1 172.9 38.5 177.4Q44 181.9 54 181.9Q63.6 181.9 68.3 178.1Q73 174.2 73 169Q73 164.5 69.4 161.1Q65.7 157.8 56.8 156.4L47.2 154.9Q41.6 154 35.1 152.5Q28.7 150.9 23 147.9Q17.4 144.8 13.8 139.4Q10.2 133.9 10.2 125.3Q10.2 114.8 15.8 107.4Q21.4 99.9 31.3 96Q41.3 92 54.1 92Q65.9 92 75.7 95.4Q85.5 98.9 92 105.6Q98.6 112.3 100.6 122.2L74 127.7Q73.3 123.6 71.4 120.1Q69.5 116.6 65.6 114.4Q61.7 112.2 55 112.2Q47.5 112.2 43.1 115.2Q38.7 118.1 38.7 123.1Q38.7 126.8 41.2 129.2Q43.7 131.6 48 133Q52.3 134.4 57.8 135.4L68.8 137.3Q77.1 138.6 84.7 141.9Q92.3 145.3 97 151.5Q101.8 157.8 101.8 168Q101.8 179.2 95.7 186.9Q89.6 194.7 79 198.6Q68.5 202.6 55.1 202.6ZM60.6 83.5 45 74.6 63.4 36.2 86.6 50.8Z M118.7 200V94.5H146.8V118.3L145.6 115.2Q150.6 103.4 159.7 97.7Q168.8 92 179.5 92Q182.6 92 185.7 92.5Q188.8 92.9 191.9 94.1L189.7 119Q183.3 117.2 177.4 117.2Q172.6 117.2 167.4 118.8Q162.2 120.5 157.8 124.7Q153.3 128.8 150.5 136.4Q147.8 143.9 147.8 155.6V200Z M254.3 202.6Q238.8 202.6 226.5 195.8Q214.1 189 206.9 176.6Q199.7 164.2 199.7 147.1Q199.7 130.3 206.8 117.9Q213.8 105.5 226.1 98.7Q238.4 92 254.1 92Q262.8 92 271.8 94.6Q280.7 97.3 288.2 104Q295.7 110.7 300.3 122.6Q304.9 134.6 304.9 153.1H218.4V136.5H279L275.9 141.7Q275.1 131.2 272 124.7Q268.9 118.2 264.1 115.3Q259.3 112.4 253.3 112.4Q245.6 112.4 240.4 116.8Q235.3 121.2 232.7 129Q230.1 136.9 230.1 147.3Q230.1 162.9 236 172Q241.9 181.1 254.1 181.1Q262 181.1 267.8 177Q273.5 172.9 276.5 164.5L302.9 171.2Q299.1 182.1 291.6 189Q284.1 196 274.4 199.3Q264.7 202.6 254.3 202.6Z M357.4 202.6Q344.1 202.6 334.4 195.9Q324.6 189.3 319.3 176.9Q314.1 164.4 314.1 147.1Q314.1 129.7 319.4 117.3Q324.7 105 334.5 98.5Q344.3 92 357.8 92Q369.5 92 378.6 97.4Q387.8 102.8 393.4 115L390.5 115.2V53.5H419.6V200H392V178.8L392.3 180.3Q387 191.7 377.9 197.1Q368.8 202.6 357.4 202.6ZM367.9 180.5Q374.8 180.5 380.2 176.9Q385.6 173.3 388.7 165.9Q391.9 158.5 391.9 147.4Q391.9 130.8 385 122.4Q378.2 114 368.2 114Q357.6 114 351.3 122.9Q344.9 131.8 344.9 147.7Q344.9 163.2 351 171.8Q357.2 180.5 367.9 180.5Z M443.1 200V94.5H471.2V118.9L470.5 114.5Q475.3 104.1 484.1 98Q492.8 92 505.3 92Q517.6 92 525.5 97.6Q533.3 103.1 537.1 113Q540.9 122.8 540.9 135.7V200H511.8V137.6Q511.8 126.4 508.1 120.2Q504.4 114 495.3 114Q484.4 114 478.3 123.3Q472.2 132.6 472.2 151.7V200Z M562.6 200V94.5H591.7V200ZM577.2 81.9Q568.5 81.9 563.2 76.7Q557.9 71.4 557.9 62.7Q557.9 53.9 563.2 48.7Q568.5 43.4 577.2 43.4Q585.9 43.4 591.2 48.7Q596.4 53.9 596.4 62.7Q596.4 71.4 591.2 76.7Q585.9 81.9 577.2 81.9Z M615.5 200V53.5H644.6V135.1L685.3 94.5H718.5L678.8 134L720 200H687.5L659.3 154.1L644.6 168.7V200Z"/>
+    <path id="logo-by" d="M636.9 324.6Q634.1 324.6 631.5 323.3Q629 321.9 627.6 318.7L627.9 318.5V324H623V285.9H628.2V302.2L627.7 301.8Q628.9 298.8 631.5 297.4Q634 296 636.9 296Q640.3 296 642.8 297.7Q645.4 299.4 646.8 302.7Q648.2 305.9 648.2 310.3Q648.2 314.7 646.8 318Q645.4 321.2 642.8 322.9Q640.3 324.6 636.9 324.6ZM635.3 320.5Q638.5 320.5 640.6 317.8Q642.6 315.1 642.6 310.2Q642.6 305.4 640.6 302.7Q638.7 300.1 635.4 300.1Q633.3 300.1 631.6 301.2Q630 302.2 629 304.5Q628 306.7 628 310.2Q628 315.4 630.1 317.9Q632.3 320.5 635.3 320.5Z M655.6 333.9V329.8H659.9Q660.4 329.8 660.7 329.5Q660.9 329.3 661.1 328.6L663 323.5L662.5 325.6L651.3 296.6H657L665.3 321L664.4 320.8L672.7 296.6H678.4L665.5 330.4Q664.8 332.1 663.4 333Q662 333.9 660.3 333.9Z  M699.6 324.6Q697.8 324.6 696.6 323.4Q695.4 322.2 695.4 320.4Q695.4 318.6 696.6 317.4Q697.8 316.2 699.6 316.2Q701.4 316.2 702.6 317.4Q703.8 318.6 703.8 320.4Q703.8 322.2 702.6 323.4Q701.4 324.6 699.6 324.6Z M720.3 324.6Q716.9 324.6 714.4 322.9Q711.8 321.1 710.4 317.9Q709 314.7 709 310.3Q709 305.8 710.4 302.6Q711.9 299.4 714.4 297.7Q716.9 296 720.3 296Q723.1 296 725.7 297.3Q728.2 298.7 729.6 301.9L729.1 302V285.9H734.2V324H729.4V318.3L729.5 318.7Q728.3 321.7 725.8 323.2Q723.2 324.6 720.3 324.6ZM721.9 320.5Q723.9 320.5 725.6 319.4Q727.3 318.3 728.3 316.1Q729.3 313.8 729.3 310.4Q729.3 305.1 727.1 302.6Q725 300.1 721.9 300.1Q718.7 300.1 716.6 302.8Q714.6 305.4 714.6 310.4Q714.6 315.2 716.6 317.8Q718.5 320.5 721.9 320.5Z M753.8 324.6Q749.9 324.6 746.9 322.8Q743.9 321 742.2 317.8Q740.5 314.5 740.5 310.3Q740.5 306 742.2 302.8Q743.9 299.6 746.9 297.8Q749.9 296 753.8 296Q757.8 296 760.8 297.8Q763.8 299.6 765.5 302.8Q767.1 306 767.1 310.3Q767.1 314.5 765.5 317.8Q763.8 321 760.8 322.8Q757.8 324.6 753.8 324.6ZM753.8 320.5Q757.4 320.5 759.5 317.8Q761.6 315 761.6 310.3Q761.6 305.5 759.5 302.8Q757.4 300.1 753.8 300.1Q750.2 300.1 748.1 302.8Q746.1 305.5 746.1 310.3Q746.1 315 748.1 317.8Q750.2 320.5 753.8 320.5Z M779.8 324Q777.8 324 776.5 322.8Q775.1 321.6 775.1 319.7V300.7H770.9V296.6H775.1V290.9L780.3 289.8V296.6H785.6V300.7H780.3V318.5Q780.3 319.3 780.5 319.6Q780.8 319.9 781.6 319.9H785.8V324Z"/>
+    <g id="mock-photo">
+                    <rect width="400" height="240" fill="#E7ECF1"/>
+                    <rect x="34" y="26" width="332" height="182" fill="#27303B"/>
+                    <rect x="34" y="26" width="332" height="40" fill="#CDD6DF"/>
+                    <path d="M34 36h332M34 46h332M34 56h332" stroke="#B9C4CF" stroke-width="2"/>
+                    <path d="M200 66v12" stroke="#8D99A6" stroke-width="2"/>
+                    <path d="M184 78h32l-6 8h-20z" fill="#F4E04D"/>
+                    <path d="M190 86h20l60 122H130z" fill="#F4E04D" opacity=".12"/>
+                    <path d="M56 96h40v56H56zM304 96h40v56h-40z" fill="#323C49"/>
+                    <path d="M62 104h28M62 114h20M310 104h28M310 114h22" stroke="#5B6876" stroke-width="3" stroke-linecap="round"/>
+                    <rect y="208" width="400" height="32" fill="#C6CFD8"/>
+                    <path d="M0 208h400" stroke="#AEB9C4" stroke-width="2"/>
+                    <g transform="translate(70 118)">
+                      <ellipse cx="130" cy="90" rx="128" ry="7" fill="#11161C" opacity=".35"/>
+                      <path d="M8 62C8 48 18 42 34 40l36-4c14-16 34-24 62-24h28c22 0 38 10 50 24l22 4c14 3 20 10 20 22v8c0 4-3 6-7 6H15c-4 0-7-2-7-6z" fill="#C2410C"/>
+                      <path d="M80 38c12-14 28-19 48-19h6v19zM142 19h16c18 0 30 7 40 19h-56z" fill="#DDE6EF"/>
+                      <path d="M20 58h228" stroke="#9A330A" stroke-width="2"/>
+                      <circle cx="62" cy="76" r="19" fill="#1C1F24"/><circle cx="62" cy="76" r="8" fill="#C9CDC4"/>
+                      <circle cx="200" cy="76" r="19" fill="#1C1F24"/><circle cx="200" cy="76" r="8" fill="#C9CDC4"/>
+                      <rect x="238" y="47" width="12" height="7" rx="3.5" fill="#F4E04D"/>
+                    </g>
+    </g>
+    <path id="logo-comma" d="M 783.07 177 C 783.07 210.35 768.12 235.65 735.92 247.15 C 752.02 231.05 761.22 217.25 760.53 200 A 23 23 0 1 1 783.07 177 Z"/>
+  </defs>
+</svg>
+
+<!-- Intro: logo składa się z kropki i przecinka -->
+<div class="intro" aria-hidden="true">
+  <svg class="intro__logo" viewBox="0 20 800 330">
+    <defs><clipPath id="intro-clip"><rect class="intro__clip" x="0" y="0" width="0" height="400"/></clipPath></defs>
+    <use href="#logo-word" class="intro__word" clip-path="url(#intro-clip)" fill="#1C1F24"/>
+    <circle class="intro__dot" cx="760.07" cy="117.53" r="23" fill="#1C1F24"/>
+    <use href="#logo-comma" class="intro__comma" fill="#2541B2"/>
+    <use href="#logo-by" class="intro__by" fill="#1C1F24"/>
+  </svg>
+</div>
+
+<a class="skip" href="#tresc">Przejdź do treści</a>
+
+<header class="hdr" data-hdr>
+  <div class="wrap hdr__in">
+    <a class="hdr__logo" href="#top" aria-label="Średnik by .dot – strona główna">
+      <svg viewBox="0 30 792 310" role="img" aria-label="Średnik by .dot">
+        <use href="#logo-word" fill="currentColor"/>
+        <circle class="logo-dot" cx="760.07" cy="117.53" r="23" fill="currentColor"/>
+        <use href="#logo-comma" class="logo-comma" fill="#2541B2"/>
+        <use href="#logo-by" fill="currentColor"/>
+      </svg>
+    </a>
+    <nav class="hdr__nav" aria-label="Główna">
+      <a href="#realizacje">Realizacje</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#proces">Jak pracujemy</a>
+      <a href="#o-nas">O nas</a>
+    </nav>
+    <a class="btn btn--primary btn--sm hdr__cta" href="#kontakt" data-magnetic><span class="btn__label">Zamów audyt</span></a>
+    <button class="hdr__burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu" data-burger>
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="hdr__progress" data-progress></div>
+</header>
+
+<div class="menu" id="menu" data-menu hidden>
+  <nav class="menu__nav" aria-label="Menu mobilne">
+    <a href="#realizacje"><span>Realizacje</span></a>
+    <a href="#oferta"><span>Oferta</span></a>
+    <a href="#proces"><span>Jak pracujemy</span></a>
+    <a href="#o-nas"><span>O nas</span></a>
+    <a href="#faq"><span>Pytania</span></a>
+  </nav>
+  <a class="btn btn--primary menu__cta" href="#kontakt"><span class="btn__label">Zamów audyt strony</span></a>
+  <p class="menu__tag">Twoja strona ma ciąg dalszy<span>;</span></p>
+</div>
+
+<main id="tresc">
+
+<!-- ============ HERO + MODERNIZACJA NA ŻYWO ============ -->
+<section class="story" id="top" data-story>
+  <div class="wrap story__grid">
+
+    <div class="story__text">
+      <div class="hero">
+        <p class="eyebrow" data-hero="eyebrow"><span class="eyebrow__dot"></span>Modernizacja stron internetowych · cała Polska</p>
+        <h1 class="hero__title" data-hero="title">Nie budujemy stron od zera. Poprawiamy te, które <span class="hl" data-hl>już masz.</span></h1>
+        <p class="hero__lead" data-hero="lead">Średnik modernizuje istniejące strony firm z&nbsp;całej Polski. Zaczynamy od audytu w&nbsp;stałej cenie, poprawiamy to, co hamuje biznes, i&nbsp;dbamy o&nbsp;stronę dalej&nbsp;– bez utraty tego, co już działa.</p>
+        <div class="hero__ctas" data-hero="ctas">
+          <a class="btn btn--primary" href="#kontakt" data-magnetic><span class="btn__label">Zamów audyt strony</span><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="link-arrow" href="#raport">Zobacz przykładowy raport</a>
+        </div>
+        <p class="note-line" data-hero="note">Audyt od 990&nbsp;zł netto, gotowy w&nbsp;7&nbsp;dni roboczych. Koszt zaliczamy na poczet modernizacji.</p>
+        <a class="scroll-cue" href="#realizacje" data-hero="cue">
+          <span class="scroll-cue__line" aria-hidden="true"></span>
+          Przewiń&nbsp;– pokażemy modernizację na żywo
+        </a>
+      </div>
+
+      <div class="steps" id="realizacje">
+        <header class="steps__intro">
+          <p class="note" data-note>Fikcyjna firma, prawdziwy proces. Pierwsze realizacje klientów pokażemy za ich zgodą.</p>
+          <h2 class="h2" data-split>Tak wygląda modernizacja</h2>
+        </header>
+
+        <article class="step" data-step="0">
+          <p class="step__num"><span>00</span> Przed</p>
+          <h3 class="step__title">Najpierw audyt</h3>
+          <p>Tak wygląda strona przed modernizacją. Audyt wskazuje, co najbardziej przeszkadza klientom i&nbsp;w&nbsp;jakiej kolejności to poprawić:</p>
+          <ol class="step__issues">
+            <li>Nagłówek nie mówi, czym zajmuje się firma ani gdzie działa.</li>
+            <li>Ostatnia aktualność jest z&nbsp;2016&nbsp;roku&nbsp;– klient widzi stronę porzuconą.</li>
+            <li>Numer telefonu ma 10&nbsp;px i&nbsp;stoi na samym dole; na telefonie trzeba go szukać.</li>
+          </ol>
+        </article>
+
+        <article class="step" data-step="1">
+          <p class="step__num"><span>01</span> Nagłówek</p>
+          <h3 class="step__title">Nagłówek mówi, czym zajmuje się firma</h3>
+          <p>„Witamy na naszej stronie!” nic klientowi nie mówi. Nowy nagłówek od razu odpowiada na jego pytanie: co tu załatwię?</p>
+        </article>
+
+        <article class="step" data-step="2">
+          <p class="step__num"><span>02</span> Kontakt</p>
+          <h3 class="step__title">Telefon widoczny na każdym ekranie</h3>
+          <p>Numer przestaje być drobnym druczkiem w&nbsp;stopce. Trafia tam, gdzie klient go szuka&nbsp;– a&nbsp;na telefonie dzwoni jednym dotknięciem.</p>
+        </article>
+
+        <article class="step" data-step="3">
+          <p class="step__num"><span>03</span> Treść</p>
+          <h3 class="step__title">Oferta zamiast aktualności sprzed lat</h3>
+          <p>Wpis z&nbsp;2016&nbsp;roku mówił klientom, że strona jest porzucona. Jego miejsce zajmuje to, co sprzedajesz dziś.</p>
+        </article>
+
+        <article class="step" data-step="4">
+          <p class="step__num"><span>04</span> Porządek</p>
+          <h3 class="step__title">Te same treści, nowy porządek</h3>
+          <p>Zostały adresy podstron, opisy usług i&nbsp;zdjęcia warsztatu. Zmienił się układ, typografia i&nbsp;kolory, a&nbsp;pozycje w&nbsp;Google chronimy planem przekierowań.</p>
+        </article>
+
+        <article class="step" data-step="5">
+          <p class="step__num"><span>05</span> Mobile</p>
+          <h3 class="step__title">Wygodna na telefonie</h3>
+          <p>Tekst czytelny bez powiększania, przyciski pod kciukiem, zdjęcia, które nie spowalniają ładowania.</p>
+        </article>
+
+        <article class="step" data-step="6" id="raport">
+          <p class="step__num"><span>06</span> Po</p>
+          <h3 class="step__title">Raport „było / jest”</h3>
+          <p>Po publikacji dostajesz raport: co zmieniliśmy i&nbsp;dlaczego. Czarno na białym, pisany po ludzku.</p>
+          <a class="btn btn--primary" href="#kontakt" data-magnetic><span class="btn__label">Zamów audyt swojej strony</span><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </article>
+      </div>
+    </div>
+
+    <!-- Makieta: stara strona, która modernizuje się w trakcie przewijania -->
+    <div class="story__visual">
+      <figure class="stage" data-stage aria-label="Demonstracja: strona Auto-Serwisu Marek przed i po modernizacji">
+        <div class="stage__tilt" data-tilt>
+
+          <div class="mock" data-mock>
+            <span class="sticker">Projekt demonstracyjny</span>
+            <div class="mock__in">
+              <div class="chrome">
+                <span class="chrome__dots"><i></i><i></i><i></i></span>
+                <span class="chrome__url">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="11" width="12" height="9" rx="2"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3"/></svg>
+                  auto-serwis-marek.pl
+                  <span class="chrome__ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>adresy bez zmian</span>
+                </span>
+              </div>
+
+              <div class="site" aria-hidden="true">
+                <div class="s-nav">
+                  <span class="s-brand"><span class="o">AUTO-SERWIS MAREK</span><span class="n"><i class="s-mark"></i>Auto-Serwis Marek</span></span>
+                  <span class="s-links"><span class="o">Strona główna | O&nbsp;nas | Galeria | Kontakt</span><span class="n"><span>Usługi</span><span>Cennik</span><span>Kontakt</span></span></span>
+                </div>
+
+                <div class="o-hero"><p class="o-title">Witamy na naszej stronie!</p><p class="o-sub">Zapraszamy do zapoznania się z&nbsp;naszą ofertą.</p></div>
+                <div class="n-hero-c"><p class="n-title-c" data-scramble="Mechanika, klimatyzacja i przeglądy aut osobowych">Mechanika, klimatyzacja i&nbsp;przeglądy aut osobowych</p><p class="n-sub-c">Termin w&nbsp;2&nbsp;dni robocze. Wycena przed naprawą.</p></div>
+                <div class="n-hero"><p class="n-title">Mechanika, klimatyzacja i&nbsp;przeglądy aut osobowych</p><p class="n-sub">Termin w&nbsp;2&nbsp;dni robocze. Wycena przed naprawą.</p><p class="n-btns"><span class="n-btn">Umów wizytę</span><span class="n-btn n-btn--ghost">Cennik</span></p></div>
+
+                <div class="s-img">
+                  <span class="s-img__old"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 15l5-5 4 4 3-3 6 6"/><path d="M4 4l16 16"/></svg>zdjęcie_warsztatu_01.jpg</span>
+                  <svg class="s-img__new" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice"><use href="#mock-photo"/></svg>
+                </div>
+
+                <div class="o-news"><p><b>Aktualności</b></p><p>12.03.2016&nbsp;– Zapraszamy na serwis klimatyzacji!</p></div>
+
+                <div class="tiles">
+                  <div class="tile"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M2.5 12h3M18.5 12h3M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg><b>Mechanika</b><span>Naprawy bieżące i&nbsp;diagnostyka</span></div>
+                  <div class="tile"><svg viewBox="0 0 24 24"><path d="M12 2.5v19M3.8 7.2l16.4 9.6M3.8 16.8l16.4-9.6M9 4.2l3 2 3-2M9 19.8l3-2 3 2"/></svg><b>Klimatyzacja</b><span>Serwis, odgrzybianie, nabijanie</span></div>
+                  <div class="tile"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.8h6V4M9 13l2 2 4-4"/></svg><b>Przeglądy</b><span>Okresowe i&nbsp;przed zakupem auta</span></div>
+                </div>
+
+                <p class="o-foot">Copyright 2016 · Strona używa plików cookies</p>
+                <p class="n-foot"><b>Auto-Serwis Marek</b><span>Mechanika · Klimatyzacja · Przeglądy</span></p>
+
+                <span class="chip"><span class="chip__txt" data-chip>tel. 600 000 000</span></span>
+
+                <!-- Warstwa audytu: odręczne obwódki i numerki -->
+                <svg class="audit" viewBox="0 0 720 450" preserveAspectRatio="none">
+                  <path class="audit__ring a1" d="M206 58C214 30 518 26 548 56c18 26-118 46-212 46-102 0-152-18-146-38 6-16 64-26 116-28"/>
+                  <path class="audit__ring a2" d="M96 276c10-28 506-32 540-6 22 20-74 44-276 44-180 0-276-12-274-32 2-14 54-24 124-26"/>
+                  <path class="audit__ring a3" d="M306 424c4-12 98-14 108-2 8 12-26 22-56 22-30 0-58-6-56-16 2-8 24-12 40-12"/>
+                </svg>
+                <span class="pin p1"><span class="pin__n">1</span><span class="pin__ok"></span><span class="pin__tag">Nagłówek bez konkretu</span></span>
+                <span class="pin p2"><span class="pin__n">2</span><span class="pin__ok"></span><span class="pin__tag">Aktualność z&nbsp;2016 r.</span></span>
+                <span class="pin p3"><span class="pin__n">3</span><span class="pin__ok"></span><span class="pin__tag">Telefon: 10&nbsp;px</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="phone" aria-hidden="true">
+            <div class="phone__in">
+              <div class="phone__screen">
+                <div class="p-scroll">
+                  <div class="p-nav"><span class="p-brand"><i class="s-mark"></i>Auto-Serwis Marek</span><span class="p-call"><svg viewBox="0 0 24 24"><path d="M6.6 3.5h2.6l1.4 4-2 1.3a12 12 0 0 0 6.6 6.6l1.3-2 4 1.4v2.6a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></svg></span></div>
+                  <p class="p-title">Mechanika, klimatyzacja i&nbsp;przeglądy aut osobowych</p>
+                  <p class="p-sub">Termin w&nbsp;2&nbsp;dni robocze. Wycena przed naprawą.</p>
+                  <span class="p-btn">Zadzwoń: 600 000 000</span>
+                  <div class="p-img"><svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice"><use href="#mock-photo"/></svg></div>
+                  <div class="p-tile"><b>Mechanika</b><span>Naprawy bieżące i&nbsp;diagnostyka</span></div>
+                  <div class="p-tile"><b>Klimatyzacja</b><span>Serwis, odgrzybianie, nabijanie</span></div>
+                  <div class="p-tile"><b>Przeglądy</b><span>Okresowe i&nbsp;przed zakupem auta</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="report" aria-hidden="true">
+            <div class="report__in">
+              <div class="r-head">
+                <svg class="r-semi" viewBox="700 80 120 190"><circle cx="760.07" cy="117.53" r="23" fill="#1C1F24"/><use href="#logo-comma" fill="#2541B2"/></svg>
+                <div><p class="r-title">Raport „było / jest”</p><p class="r-meta">Auto-Serwis Marek · demo</p></div>
+              </div>
+              <ul class="r-rows">
+                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><p><b>Nagłówek mówi, co robi firma</b><s>„Witamy na naszej stronie!”</s></p></li>
+                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><p><b>Telefon na każdym ekranie</b><s>10&nbsp;px w&nbsp;stopce</s></p></li>
+                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><p><b>Aktualna oferta</b><s>wpis z&nbsp;2016&nbsp;roku</s></p></li>
+                <li><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><p><b>Adresy podstron bez zmian</b><span>pozycje w&nbsp;Google chronione</span></p></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </figure>
+
+      <div class="stage-ui" aria-hidden="true">
+        <span class="stage-ui__label" data-stage-label>Przed</span>
+        <span class="stage-ui__bar"><span class="stage-ui__fill" data-stage-fill></span></span>
+        <span class="stage-ui__count"><span data-stage-count>0</span>/6</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PASEK ============ -->
+<section class="marquee" aria-label="Zakres prac">
+  <div class="marquee__track" data-marquee>
+    <p class="marquee__row">audyt<b>;</b> wersja mobilna<b>;</b> szybkość<b>;</b> WordPress<b>;</b> treści<b>;</b> SEO bez strat<b>;</b> dostępność<b>;</b> opieka<b>;</b>&nbsp;</p>
+    <p class="marquee__row" aria-hidden="true">audyt<b>;</b> wersja mobilna<b>;</b> szybkość<b>;</b> WordPress<b>;</b> treści<b>;</b> SEO bez strat<b>;</b> dostępność<b>;</b> opieka<b>;</b>&nbsp;</p>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="sec sec--sage" aria-labelledby="h-problem">
+  <div class="wrap g12">
+    <p class="margin note" data-note>Zaznacz, co pasuje do Twojej strony. Serio&nbsp;– to działa.</p>
+    <div class="body">
+      <h2 class="h2" id="h-problem" data-split>Strona, która kiedyś była dobra, dziś po cichu traci klientów.</h2>
+      <fieldset class="checks" data-checks>
+        <legend class="sr-only">Objawy, które widzisz na swojej stronie</legend>
+        <label class="check"><input type="checkbox"><span class="check__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="check__txt">Na telefonie trzeba powiększać tekst.</span></label>
+        <label class="check"><input type="checkbox"><span class="check__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="check__txt">Oferta na stronie jest starsza niż ta, którą sprzedajesz.</span></label>
+        <label class="check"><input type="checkbox"><span class="check__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="check__txt">Nikt nie pamięta, kiedy aktualizowano wtyczki.</span></label>
+        <label class="check"><input type="checkbox"><span class="check__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="check__txt">Nie wiesz, czy formularz kontaktowy w&nbsp;ogóle działa.</span></label>
+        <label class="check"><input type="checkbox"><span class="check__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="check__txt">Wstydzisz się wysłać link klientowi.</span></label>
+        <label class="check"><input type="checkbox"><span class="check__box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="check__txt">Wykonawca strony przestał odbierać telefon.</span></label>
+      </fieldset>
+      <div class="verdict" data-verdict data-level="0">
+        <div class="verdict__meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="verdict__text" aria-live="polite" data-verdict-text>Zaznacz objawy, które widzisz u&nbsp;siebie.</p>
+        <a class="btn btn--primary btn--sm verdict__cta" href="#kontakt"><span class="btn__label">Zamów audyt strony</span><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <p class="lead" data-reveal>Jeśli rozpoznajesz dwa z&nbsp;tych objawów, Twoja strona potrzebuje przeglądu. <span class="hl" data-hl="scroll">Niekoniecznie nowej strony.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DLACZEGO NIE OD ZERA ============ -->
+<section class="sec quote" aria-labelledby="h-why">
+  <div class="wrap">
+    <p class="quote__text" data-scrub-words>Agencja zarabia na budowie nowej strony. <span class="quote__accent">My&nbsp;– na tym, żeby Twoja działała jak najdłużej.</span></p>
+  </div>
+  <div class="wrap g12 why-wrap">
+    <p class="margin note" data-note>Dlatego zaczynamy od tego, co już masz.</p>
+    <div class="body">
+      <h2 class="h2" id="h-why" data-split>Dlaczego nie zaczynamy od nowa</h2>
+      <div class="cols3 why">
+        <div class="why__item" data-reveal>
+          <svg class="why__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 6h20v36l-10-8-10 8z"/><path d="M19 17l4 4 7-8"/></svg>
+          <h3 class="h3">Zostaje to, co działa</h3>
+          <p>Treści, adresy podstron i&nbsp;pozycje w&nbsp;Google przenosimy z&nbsp;planem przekierowań, a&nbsp;nie na wyczucie.</p>
+        </div>
+        <div class="why__item" data-reveal>
+          <svg class="why__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h32M8 24h22M8 36h12"/><circle cx="38" cy="36" r="4"/></svg>
+          <h3 class="h3">Płacisz za to, co potrzebne</h3>
+          <p>Kolejność prac wynika z&nbsp;audytu, więc najpierw robimy zmiany o&nbsp;największym wpływie.</p>
+        </div>
+        <div class="why__item" data-reveal>
+          <svg class="why__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="18" cy="24" r="11"/><circle cx="30" cy="24" r="11"/></svg>
+          <h3 class="h3">Strona i&nbsp;marka w&nbsp;jednych rękach</h3>
+          <p>Za Średnikiem stoi studio reklamy .dot: grafiki, zdjęcia i&nbsp;druk bez szukania kolejnych wykonawców.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFERTA ============ -->
+<section class="sec offer-sec" id="oferta" aria-labelledby="h-offer">
+  <div class="wrap">
+    <div class="g12 sec__head">
+      <p class="margin note" data-note>Ceny netto. Widełki modernizacji ustalamy po audycie.</p>
+      <h2 class="h2 body" id="h-offer" data-split>Trzy etapy. Możesz zatrzymać się po każdym.</h2>
+    </div>
+    <ol class="offer">
+      <li class="card card--lead" data-card>
+        <span class="card__sticker">Od tego zaczynamy</span>
+        <span class="card__num">01</span>
+        <h3 class="card__title">Diagnoza<span class="semi" aria-hidden="true">;</span></h3>
+        <p class="card__text">Audyt strony z&nbsp;listą priorytetów: co poprawić teraz, co w&nbsp;tym kwartale, a&nbsp;czego nie warto ruszać. Raport i&nbsp;45 minut omówienia.</p>
+        <ul class="card__meta"><li>7&nbsp;dni roboczych</li><li>Koszt zaliczany na poczet modernizacji</li></ul>
+        <p class="price"><span class="price__from">od</span> <span class="price__num" data-count-to="990">990</span> <span class="price__cur">zł</span></p>
+        <a class="btn btn--light" href="#kontakt" data-magnetic><span class="btn__label">Zamów audyt strony</span><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </li>
+      <li class="card" data-card>
+        <span class="card__num">02</span>
+        <h3 class="card__title">Modernizacja<span class="semi" aria-hidden="true">;</span></h3>
+        <p class="card__text">Poprawiamy wygląd, treści, wersję mobilną, szybkość i&nbsp;WordPressa. Etapami, na kopii strony, z&nbsp;ochroną pozycji w&nbsp;Google.</p>
+        <ul class="card__meta"><li>Etapami, na kopii strony</li><li>Akceptujesz przed publikacją</li></ul>
+        <p class="price"><span class="price__from">od</span> <span class="price__num" data-count-to="3900">3 900</span> <span class="price__cur">zł</span></p>
+        <a class="btn btn--ghost" href="#kontakt"><span class="btn__label">Wyślij wyniki audytu do wyceny</span></a>
+      </li>
+      <li class="card" data-card>
+        <span class="card__num">03</span>
+        <h3 class="card__title">Opieka<span class="semi" aria-hidden="true">;</span></h3>
+        <p class="card__text">Aktualizacje po kopii zapasowej, monitoring, drobne zmiany i&nbsp;raport co miesiąc, pisany po ludzku.</p>
+        <ul class="card__meta"><li>Raport co miesiąc</li><li>Propozycja, nie warunek</li></ul>
+        <p class="price"><span class="price__from">od</span> <span class="price__num" data-count-to="240">240</span> <span class="price__cur">zł / mies.</span></p>
+        <a class="btn btn--ghost" href="#kontakt"><span class="btn__label">Sprawdź, ile kosztuje opieka</span></a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ PROCES ============ -->
+<section class="sec sec--sage" id="proces" aria-labelledby="h-process">
+  <div class="wrap g12">
+    <p class="margin note" data-note>Nic nie trafia do sieci bez Twojej akceptacji.</p>
+    <div class="body">
+      <h2 class="h2" id="h-process" data-split>Jak to wygląda w&nbsp;praktyce</h2>
+      <ol class="process" data-process>
+        <li class="process__fill" aria-hidden="true"><span data-process-fill></span></li>
+        <li class="process__step"><span class="process__num">1</span><p>Wysyłasz adres strony i&nbsp;kilka zdań o&nbsp;firmie.</p></li>
+        <li class="process__step"><span class="process__num">2</span><p>W ciągu 7&nbsp;dni roboczych dostajesz raport i&nbsp;omawiamy go w&nbsp;45 minut.</p></li>
+        <li class="process__step"><span class="process__num">3</span><p>Decydujesz, co robimy i&nbsp;w&nbsp;jakiej kolejności.</p></li>
+        <li class="process__step"><span class="process__num">4</span><p>Pracujemy na kopii strony. Akceptujesz zmiany, zanim trafią do sieci.</p></li>
+        <li class="process__step"><span class="process__num">5</span><p>Po publikacji dostajesz raport „było / jest” i&nbsp;możesz przejść na opiekę.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ W KAŻDYM PAKIECIE ============ -->
+<section class="sec" id="o-nas" aria-labelledby="h-always">
+  <div class="wrap g12">
+    <div class="margin always__side">
+      <p class="note" data-note>Średnik to marka .dot&nbsp;– Studio Reklamy.</p>
+      <div class="badge" data-badge aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs><path id="badge-circle" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs>
+          <text><textPath href="#badge-circle">w każdym pakiecie · w każdym pakiecie · </textPath></text>
+        </svg>
+        <svg class="badge__semi" viewBox="700 80 120 190"><circle cx="760.07" cy="117.53" r="23" fill="#1C1F24"/><use href="#logo-comma" fill="#2541B2"/></svg>
+      </div>
+    </div>
+    <div class="body">
+      <h2 class="h2" id="h-always" data-split>Co dostajesz w&nbsp;każdym pakiecie</h2>
+      <ul class="always" data-always>
+        <li><span class="always__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Kopia strony przed każdą zmianą.</li>
+        <li><span class="always__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Cena albo widełki przed startem.</li>
+        <li><span class="always__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Raport po każdym etapie, pisany po ludzku.</li>
+        <li><span class="always__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Jedna osoba kontaktowa od początku do końca.</li>
+        <li><span class="always__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Umowa i&nbsp;faktura VAT.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec sec--sage" id="faq" aria-labelledby="h-faq">
+  <div class="wrap g12">
+    <p class="margin note" data-note>Nie ma tu Twojego pytania? Napisz&nbsp;– odpowiada człowiek.</p>
+    <div class="body">
+      <h2 class="h2" id="h-faq" data-split>Pytania, które słyszymy najczęściej</h2>
+      <div class="faq" data-faq>
+        <details open><summary>Czy stracę pozycje w&nbsp;Google?<span class="faq__ic" aria-hidden="true"></span></summary><div class="faq__a"><p>Robimy wszystko, żeby nie: mapa adresów, przekierowania i&nbsp;kontrola indeksowania po publikacji. Nikt uczciwy nie zagwarantuje pozycji, ale potrafimy nie zepsuć tego, co masz.</p></div></details>
+        <details><summary>Czy strona musi być na WordPressie?<span class="faq__ic" aria-hidden="true"></span></summary><div class="faq__a"><p>Specjalizujemy się w&nbsp;WordPressie. Inne systemy oceniamy w&nbsp;audycie i&nbsp;mówimy wprost, czy możemy pomóc.</p></div></details>
+        <details><summary>Co, jeśli audyt pokaże, że lepiej zrobić nową stronę?<span class="faq__ic" aria-hidden="true"></span></summary><div class="faq__a"><p>Powiemy to wprost i&nbsp;wyjaśnimy dlaczego.</p></div></details>
+        <details><summary>Czy strona będzie wyłączona na czas prac?<span class="faq__ic" aria-hidden="true"></span></summary><div class="faq__a"><p>Nie. Pracujemy na kopii, a&nbsp;przełączenie trwa zwykle kilka minut.</p></div></details>
+        <details><summary>Czy muszę wykupić opiekę?<span class="faq__ic" aria-hidden="true"></span></summary><div class="faq__a"><p>Nie. Opieka to propozycja, nie warunek.</p></div></details>
+        <details><summary>Czy pomożecie z&nbsp;ustawą o&nbsp;dostępności?<span class="faq__ic" aria-hidden="true"></span></summary><div class="faq__a"><p>Sprawdzimy stronę według wytycznych WCAG i&nbsp;poprawimy błędy techniczne. Ocenę, czy ustawa dotyczy Twojej firmy, zostawiamy prawnikowi.</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KONTAKT ============ -->
+<section class="sec contact dark" id="kontakt" aria-labelledby="h-cta">
+  <svg class="contact__semi" viewBox="700 80 120 190" aria-hidden="true" data-contact-semi>
+    <circle class="contact__dot" cx="760.07" cy="117.53" r="23"/>
+    <use href="#logo-comma" class="contact__comma"/>
+  </svg>
+  <div class="wrap contact__grid">
+    <div class="contact__intro">
+      <h2 class="h2 contact__title" id="h-cta" data-split>Wyślij adres swojej strony.</h2>
+      <p class="lead" data-reveal>W ciągu jednego dnia roboczego odpiszemy, czy i&nbsp;jak możemy pomóc. Odpowiada człowiek, nie automat.</p>
+      <ul class="contact__facts" data-reveal>
+        <li><b>od 990&nbsp;zł</b> netto za audyt strony</li>
+        <li><b>7&nbsp;dni</b> roboczych na gotowy raport</li>
+        <li><b>45&nbsp;min</b> omówienia wyników z&nbsp;nami</li>
+      </ul>
+    </div>
+    <form class="form" data-form action="" method="post" novalidate>
+      <div class="field">
+        <input id="f-url" name="strona" type="text" inputmode="url" autocomplete="url" placeholder=" " required>
+        <label for="f-url">Adres strony</label>
+        <span class="field__hint">np. twojafirma.pl</span>
+      </div>
+      <div class="field">
+        <input id="f-mail" name="email" type="email" autocomplete="email" placeholder=" " required>
+        <label for="f-mail">E-mail</label>
+      </div>
+      <div class="field">
+        <textarea id="f-msg" name="wiadomosc" rows="3" placeholder=" "></textarea>
+        <label for="f-msg">Co najbardziej przeszkadza Ci w&nbsp;stronie? <span>(opcjonalnie)</span></label>
+      </div>
+      <p class="field--hp" aria-hidden="true"><label>Nie wypełniaj <input name="firma_www" tabindex="-1" autocomplete="off"></label></p>
+      <p class="form__error" data-form-error role="alert"></p>
+      <button class="btn btn--light form__submit" type="submit" data-magnetic>
+        <span class="btn__label">Wyślij do oceny</span>
+        <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <p class="form__small">Bez zobowiązań. Dane służą wyłącznie do odpowiedzi na Twoje zapytanie.</p>
+      <div class="form__done" data-form-done tabindex="-1">
+        <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg>
+        <p class="form__done-title">Dziękujemy<span>;</span></p>
+        <p>Mamy Twój adres. Odpiszemy w&nbsp;ciągu jednego dnia roboczego.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ STOPKA ============ -->
+<footer class="foot dark">
+  <div class="wrap">
+    <p class="foot__tag" data-foot-tag>Twoja strona ma ciąg dalszy<svg class="foot__semi" viewBox="700 80 120 190" aria-hidden="true"><defs><clipPath id="foot-clip"><rect class="foot__clip" x="700" y="80" width="120" height="190"/></clipPath></defs><circle class="foot__dot" cx="760.07" cy="117.53" r="23"/><use href="#logo-comma" class="foot__comma" clip-path="url(#foot-clip)"/></svg><span class="sr-only">;</span></p>
+    <div class="foot__row">
+      <a class="foot__logo" href="#top" aria-label="Średnik by .dot – do góry strony">
+        <svg viewBox="0 30 792 310" aria-hidden="true"><use href="#logo-word" fill="#FFFFFF"/><circle cx="760.07" cy="117.53" r="23" fill="#FFFFFF"/><use href="#logo-comma" fill="#9DB0FF"/><use href="#logo-by" fill="#FFFFFF"/></svg>
+      </a>
+      <nav class="foot__nav" aria-label="Stopka">
+        <a href="#realizacje">Realizacje</a><a href="#oferta">Oferta</a><a href="#proces">Jak pracujemy</a><a href="#faq">Pytania</a><a href="#kontakt">Kontakt</a><a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      </nav>
+    </div>
+    <div class="foot__legal">
+      <span>Średnik to marka .dot&nbsp;– Studio Reklamy, Sebastian Biel, Rzezawa</span>
+      <span>[E-MAIL]</span><span>[TELEFON]</span><span>NIP [NIP]</span>
+    </div>
+  </div>
+  <div class="foot__giant" aria-hidden="true">
+    <svg viewBox="0 30 792 225" data-giant><use href="#logo-word" fill="currentColor"/><circle cx="760.07" cy="117.53" r="23" fill="currentColor"/><use href="#logo-comma" class="foot__giant-comma"/></svg>
+  </div>
+</footer>
+
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/vendor/SplitText.min.js" defer></script>
+<script src="assets/vendor/ScrambleTextPlugin.min.js" defer></script>
+<script src="assets/vendor/DrawSVGPlugin.min.js" defer></script>
+<script src="assets/vendor/lenis.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
