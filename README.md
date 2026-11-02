@@ -33,6 +33,10 @@ python3 -m http.server 8000
 
 Następnie otwórz http://localhost:8000.
 
+## Zdjęcie warsztatu w makiecie
+
+Makieta „Auto-Serwis Marek” korzysta ze zdjęcia `assets/img/warsztat.jpg` (wygenerowane w Higgsfield, format 3:2, ok. 1024 px szerokości). Na starej stronie pokazuje je rozciągnięte i wyblakłe, a po modernizacji porządnie wykadrowane, także na ekranie telefonu. Jeśli pliku nie ma, strona sama pokazuje zapasową ilustrację, więc nic się nie psuje.
+
 ## Dane kontaktowe
 
 E-mail sebastian.biel@me.com, telefon 790 700 061, NIP 8681879901 – w stopce, w sekcji kontaktu, w danych strukturalnych (JSON-LD) i w polityce prywatności.
