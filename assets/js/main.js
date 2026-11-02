@@ -177,16 +177,20 @@
     if (n < 2 && prev >= 2) { ANIM && G.killTweensOf(chipTxt); chipTxt.textContent = CHIP_OLD; }
   }
 
+  const storyVisual = $('.story__visual');
+  const stepTitles = steps.map((s) => $('.step__title', s));
+
   function updateStory() {
-    // Desktop: krok jest aktywny, gdy jego środek minie 62% wysokości okna.
-    // Telefon: gdy jego tytuł wjedzie pod przyklejoną makietę.
-    const mobile = mqMobile.matches;
-    const line = innerHeight * (mobile ? 0.74 : 0.62);
-    let n = 0;
-    for (const s of steps) {
-      const r = s.getBoundingClientRect();
-      if ((mobile ? r.top : r.top + r.height / 2) < line) n = +s.dataset.step;
+    // Makieta zmienia się, gdy tytuł kroku wjedzie w dolną część ekranu –
+    // wtedy tekst poprzedniego kroku właśnie z niego znika, więc na ekranie
+    // nigdy nie zostaje sam wyszarzony opis.
+    let line = innerHeight * 0.72;
+    if (mqMobile.matches) {
+      const top = Math.max(0, storyVisual.getBoundingClientRect().bottom);
+      line = top + (innerHeight - top) * 0.66;
     }
+    let n = 0;
+    stepTitles.forEach((t, i) => { if (t.getBoundingClientRect().top < line) n = +steps[i].dataset.step; });
     setStep(n);
   }
 
@@ -320,8 +324,13 @@
     const loop = G.to(track, { xPercent: -50, duration: 32, ease: 'none', repeat: -1 });
     loop.totalTime(loop.duration() * 400);
     let dir = 1;
+    // poza ekranem i pod kursorem pasek stoi
+    const marquee = $('.marquee');
+    marquee.addEventListener('pointerenter', () => loop.pause());
+    marquee.addEventListener('pointerleave', () => loop.play());
     ST.create({
-      trigger: '.marquee', start: 'top bottom', end: 'bottom top',
+      trigger: marquee, start: 'top bottom', end: 'bottom top',
+      onToggle: (self) => (self.isActive ? loop.play() : loop.pause()),
       onUpdate(self) {
         dir = self.direction;
         const boost = Math.min(Math.abs(self.getVelocity()) / 250, 7);
@@ -494,6 +503,12 @@
   }
   [fUrl, fMail].forEach((i) => i.addEventListener('input', () => fieldError(i, false)));
 
+  // Przyciski z oferty podpowiadają treść wiadomości
+  $$('[data-topic]').forEach((a) => a.addEventListener('click', () => {
+    const msg = $('#f-msg');
+    if (!msg.value.trim()) msg.value = a.dataset.topic;
+  }));
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const urlOk = /^(https?:\/\/)?[^\s/.]+(\.[^\s/.]+)+(\/\S*)?$/i.test(fUrl.value.trim());
@@ -526,7 +541,7 @@
       form.classList.add('is-done');
       formDone.focus();
     } catch (err) {
-      formErr.textContent = 'Nie udało się wysłać formularza. Spróbuj ponownie za chwilę.';
+      formErr.innerHTML = 'Nie udało się wysłać formularza. Napisz na <a href="mailto:sebastian.biel@me.com">sebastian.biel@me.com</a> albo zadzwoń: <a href="tel:+48790700061">790&nbsp;700&nbsp;061</a>.';
     } finally {
       btn.classList.remove('is-loading');
       btnLabel.textContent = 'Wyślij do oceny';

@@ -16,6 +16,7 @@ Statyczna strona: HTML, CSS i JavaScript, bez procesu budowania. Wystarczy wgra�
 
 ```
 index.html                  strona główna
+send.php                    wysyłka formularza kontaktowego (PHP)
 polityka-prywatnosci.html   polityka prywatności (wersja robocza)
 assets/css/style.css        style
 assets/js/main.js           animacje i interakcje
@@ -38,7 +39,7 @@ E-mail sebastian.biel@me.com, telefon 790 700 061, NIP 8681879901 – w stopce, 
 
 ## Do uzupełnienia przed publikacją
 
-1. **Wysyłka formularza** – w `index.html` wpisz adres usługi formularzy w atrybucie `action` formularza (`<form class="form" data-form action="" …>`), np. Formspree, Basin albo własny skrypt PHP. Skrypt wysyła dane metodą POST (`strona`, `email`, `wiadomosc`) i oczekuje odpowiedzi 2xx. Dopóki `action` jest pusty, formularz działa w trybie pokazowym: po walidacji pokazuje podziękowanie, ale niczego nie wysyła.
+1. **Wysyłka formularza** – formularz wysyła zgłoszenia przez `send.php` na adres sebastian.biel@me.com (hosting musi obsługiwać PHP z funkcją `mail()`; ma to większość polskich hostingów). Po wgraniu wyślij zgłoszenie testowe i sprawdź, czy dotarło, także w folderze spam. Jeśli serwer nie obsługuje PHP, formularz pokaże komunikat z e-mailem i telefonem; wtedy wpisz w atrybucie `action` adres usługi typu Formspree.
 2. **Polityka prywatności** – uzupełnij pola oznaczone na żółto w `polityka-prywatnosci.html` i daj tekst do sprawdzenia prawnikowi.
 3. **Adres strony w meta tagach** – po wyborze domeny warto zmienić `og:image` na pełny adres (np. `https://twojadomena.pl/assets/img/og.png`).
 
