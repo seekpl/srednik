@@ -350,7 +350,7 @@
         const obj = { v: 0 };
         G.to(obj, {
           v: to, duration: 1.8, ease: 'power3.out',
-          onUpdate: () => { el.textContent = fmt(Math.round(obj.v / 10) * 10); },
+          onUpdate: () => { el.textContent = fmt(to >= 1000 ? Math.round(obj.v / 10) * 10 : Math.round(obj.v)); },
           onComplete: () => { el.textContent = fmt(to); },
         });
       });
