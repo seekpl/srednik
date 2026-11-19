@@ -22,6 +22,12 @@
     ST.config({ ignoreMobileResize: true });
   }
 
+  /* ---------- Zdjęcie w makiecie: bez pliku zostaje zapasowa ilustracja ---------- */
+  $$('.s-img img, .p-img img, .s-img__shot').forEach((img) => {
+    if (img.complete && img.naturalWidth === 0) img.remove();
+    else img.addEventListener('error', () => img.remove(), { once: true });
+  });
+
   /* ---------- Płynne przewijanie ---------- */
   let lenis = null;
   if (ANIM && window.Lenis) {

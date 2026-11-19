@@ -26,6 +26,7 @@ nad nią średnik, czyli „Twoja strona ma ciąg dalszy;” pokazane w samym zd
 
 ```
 index.html                  strona główna
+.htaccess                   nagłówki bezpieczeństwa (HSTS, CSP i inne) – Apache / LiteSpeed
 send.php                    wysyłka formularza kontaktowego (PHP)
 polityka-prywatnosci.html   polityka prywatności (wersja robocza)
 assets/css/style.css        style
@@ -56,6 +57,17 @@ E-mail sebastian.biel@me.com, telefon 790 700 061, NIP 8681879901 – w stopce, 
 1. **Wysyłka formularza** – formularz wysyła zgłoszenia przez `send.php` na adres sebastian.biel@me.com (hosting musi obsługiwać PHP z funkcją `mail()`; ma to większość polskich hostingów). Po wgraniu wyślij zgłoszenie testowe i sprawdź, czy dotarło, także w folderze spam. Jeśli serwer nie obsługuje PHP, formularz pokaże komunikat z e-mailem i telefonem; wtedy wpisz w atrybucie `action` adres usługi typu Formspree.
 2. **Polityka prywatności** – uzupełnij pola oznaczone na żółto w `polityka-prywatnosci.html` i daj tekst do sprawdzenia prawnikowi.
 3. **Adres strony w meta tagach** – po wyborze domeny warto zmienić `og:image` na pełny adres (np. `https://twojadomena.pl/assets/img/og.png`).
+
+## Nagłówki bezpieczeństwa
+
+Plik `.htaccess` ustawia: Strict-Transport-Security, Content-Security-Policy, X-Frame-Options,
+X-Content-Type-Options, Referrer-Policy, Permissions-Policy i Cross-Origin-Opener-Policy.
+CSP dopuszcza tylko pliki z tej domeny i zabrania kodu inline, dlatego skrypt startowy jest w
+`assets/js/boot.js`, a style wyłącznie w `assets/css/style.css`. Dodając coś z zewnątrz
+(np. Google Analytics, osadzoną mapę), trzeba dopisać tę domenę do CSP.
+
+Plik zaczyna się od kropki, więc w FileZilli trzeba włączyć Serwer → Wymuś pokazywanie ukrytych plików.
+Sprawdzenie po wgraniu: https://securityheaders.com/?q=modernizacjawordpress.pl&followRedirects=on
 
 ## Licencje bibliotek
 

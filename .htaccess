@@ -1,0 +1,29 @@
+# Średnik by .dot – nagłówki bezpieczeństwa (Apache / LiteSpeed z mod_headers).
+# Wszystko jest w <IfModule>, więc serwer bez mod_headers po prostu zignoruje ten blok.
+
+<IfModule mod_headers.c>
+  # Tylko HTTPS przez rok (przeglądarka sama przechodzi na https://)
+  Header always set Strict-Transport-Security "max-age=31536000"
+
+  # Skrypty, style, fonty i obrazy wyłącznie z tej domeny; bez kodu inline
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+
+  # Strony nie da się osadzić w ramce na cudzej witrynie
+  Header always set X-Frame-Options "DENY"
+
+  # Przeglądarka nie zgaduje typu plików
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Inne strony widzą tylko domenę, z której przyszedł odwiedzający
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Strona nie potrzebuje kamery, mikrofonu, lokalizacji, płatności ani USB
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
+  # Odizolowanie okna strony od okien otwartych z innych witryn
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+
+  # Nie ujawniamy wersji PHP
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
+</IfModule>
