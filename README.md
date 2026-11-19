@@ -12,6 +12,16 @@ Statyczna strona: HTML, CSS i JavaScript, bez procesu budowania. Wystarczy wgra�
 - Płynne przewijanie (Lenis), animacje GSAP + ScrollTrigger.
 - Pełna obsługa `prefers-reduced-motion`: przy ograniczonym ruchu strona działa bez animacji. Bez JavaScriptu cała treść jest widoczna.
 
+## Identyfikacja („korekta”)
+
+Średnik poprawia istniejące strony tak, jak korektor poprawia tekst, i stąd wzięła się identyfikacja:
+ciepły papier, atrament i czerwień korekty. W nagłówku czerwony długopis zakreśla kropkę i dopisuje
+nad nią średnik, czyli „Twoja strona ma ciąg dalszy;” pokazane w samym zdaniu.
+
+- Kolory: papier `#F3EDE2`, piasek `#E8DFCF`, atrament `#1E1A16`, szary atrament `#5C534A`,
+  czerwień korekty `#AC3317` (na ciemnym tle `#F0907A`). Tokeny są na początku `assets/css/style.css`.
+- Kroje: Literata (nagłówki, notatki na marginesie), Schibsted Grotesk (tekst, interfejs).
+
 ## Struktura
 
 ```

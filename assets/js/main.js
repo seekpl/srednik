@@ -210,31 +210,24 @@
 
   /* ---------- Intro i wejście hero ---------- */
   function heroIn() {
-    if (!ANIM) { root.classList.add('hero-in'); $$('[data-hl]:not([data-hl="scroll"])').forEach((h) => h.classList.add('is-on')); return; }
+    if (!ANIM) { root.classList.add('hero-in'); return; }
 
     const tl = G.timeline({ defaults: { ease: 'expo.out' } });
-    const title = $('[data-hero="title"]');
-    let words = [title];
-    if (window.SplitText) {
-      const split = window.SplitText.create(title, { type: 'words', mask: 'words' });
-      words = split.words;
-    }
     const rings = $$('.audit__ring');
     const pins = $$('.pin');
 
     tl.from(hdr, { yPercent: -100, duration: 1.1 }, 0)
-      .from('[data-hero="eyebrow"]', { y: 18, opacity: 0, duration: 0.9 }, 0.05)
-      .from(words, { yPercent: 115, duration: 1.2, stagger: 0.045 }, 0.1)
-      .from('[data-hero="lead"]', { y: 26, opacity: 0, duration: 1.1 }, 0.55)
-      .from('[data-hero="ctas"] > *', { y: 22, opacity: 0, duration: 1, stagger: 0.08 }, 0.7)
-      .from('[data-hero="note"]', { clipPath: 'inset(0 100% 0 0)', duration: 1.2, ease: 'power3.inOut' }, 0.85)
-      .from('[data-hero="cue"]', { opacity: 0, duration: 0.8 }, 1.3)
-      .add(() => $('[data-hero="title"] [data-hl]').classList.add('is-on'), 1.0)
+      .from('[data-hero="title"]', { y: 24, opacity: 0, duration: 1.2 }, 0.05)
+      .from('[data-hero="lead"], [data-hero="ctas"], [data-hero="note"], [data-hero="cue"]', { opacity: 0, duration: 1 }, 0.5)
       .from('.stage__tilt', { opacity: 0, y: 90, rotationX: 24, rotationY: -16, scale: 0.9, duration: 1.8, transformOrigin: '50% 100%' }, 0.25)
       .from('.stage-ui', { opacity: 0, y: 12, duration: 0.8 }, 1.1)
       .from('.sticker', { opacity: 0, scale: 1.8, rotation: 14, duration: 0.7, ease: 'back.out(2.2)' }, 1.0);
 
-    if (window.DrawSVGPlugin) tl.from(rings, { drawSVG: '0%', duration: 0.8, stagger: 0.28, ease: 'power2.inOut' }, 0.95);
+    if (window.DrawSVGPlugin) {
+      tl.from('.fix__ring', { drawSVG: '0%', duration: 0.7, ease: 'power2.inOut' }, 0.7)
+        .from(rings, { drawSVG: '0%', duration: 0.8, stagger: 0.28, ease: 'power2.inOut' }, 0.95);
+    }
+    tl.from('.fix__semi', { opacity: 0, scale: 0.4, rotation: -12, transformOrigin: '50% 100%', duration: 0.6, ease: 'back.out(2.4)' }, 1.3);
     tl.from(pins, { scale: 0, duration: 0.7, stagger: 0.28, ease: 'back.out(2.4)', clearProps: 'transform' }, 1.15)
       .from($$('.pin__tag'), { opacity: 0, x: (i) => (i < 2 ? 10 : -10), duration: 0.6, stagger: 0.28, ease: 'power3.out', clearProps: 'opacity,transform' }, 1.35);
 
@@ -278,37 +271,10 @@
   setIndexes('.faq');
   $$('.checks .check').forEach((c, i) => c.style.setProperty('--i', i));
 
-  if (root.classList.contains('anim') && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (!en.isIntersecting) return;
-        en.target.classList.add('is-in');
-        if (en.target.matches('[data-hl="scroll"]')) setTimeout(() => en.target.classList.add('is-on'), 500);
-        io.unobserve(en.target);
-      });
-    }, { rootMargin: '0px 0px -12% 0px' });
-    $$('[data-note], [data-reveal], .checks, .offer, .faq, [data-hl="scroll"]').forEach((el) => io.observe(el));
-  } else {
-    $$('[data-hl="scroll"]').forEach((h) => h.classList.add('is-on'));
-  }
-
   function scrollAnimations() {
     if (!ANIM) return;
 
-    // Nagłówki sekcji – linijka po linijce
     if (window.SplitText) {
-      $$('[data-split]').forEach((h) => {
-        window.SplitText.create(h, {
-          type: 'lines', mask: 'lines', autoSplit: true,
-          onSplit(self) {
-            return G.from(self.lines, {
-              yPercent: 110, duration: 1.2, ease: 'expo.out', stagger: 0.09,
-              scrollTrigger: { trigger: h, start: 'top 88%', once: true },
-            });
-          },
-        });
-      });
-
       // Cytat – słowa „zapalają się” w rytm przewijania
       const q = $('[data-scrub-words]');
       const qs = window.SplitText.create(q, { type: 'words' });
@@ -338,24 +304,6 @@
       },
     });
 
-    // Ceny liczone od zera, gdy karta pojawi się na ekranie
-    const fmt = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0');
-    const countIO = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (!en.isIntersecting) return;
-        countIO.unobserve(en.target);
-        const el = en.target;
-        const to = +el.dataset.countTo;
-        const obj = { v: 0 };
-        G.to(obj, {
-          v: to, duration: 1.8, ease: 'power3.out',
-          onUpdate: () => { el.textContent = fmt(to >= 1000 ? Math.round(obj.v / 10) * 10 : Math.round(obj.v)); },
-          onComplete: () => { el.textContent = fmt(to); },
-        });
-      });
-    }, { threshold: 0.6 });
-    $$('[data-count-to]').forEach((el) => countIO.observe(el));
-
     // Proces – linia wypełnia się, kroki zapalają po kolei
     G.fromTo('[data-process-fill]', { scaleY: 0 }, {
       scaleY: 1, ease: 'none',
@@ -364,15 +312,6 @@
     $$('.process__step').forEach((s) => {
       ST.create({ trigger: s, start: 'top 66%', onEnter: () => s.classList.add('is-on'), onLeaveBack: () => s.classList.remove('is-on') });
     });
-
-    // Kontakt – wielki średnik: paralaksa i podskakująca kropka
-    const semi = $('[data-contact-semi]');
-    G.fromTo(semi, { y: 80 }, { y: -80, ease: 'none', scrollTrigger: { trigger: '.contact', start: 'top bottom', end: 'bottom top', scrub: true } });
-    const bounce = G.timeline({ repeat: -1, repeatDelay: 2.4, paused: true })
-      .to('.contact__dot', { y: -70, duration: 0.45, ease: 'power2.out' })
-      .to('.contact__dot', { y: 0, duration: 0.75, ease: 'bounce.out' })
-      .to('.contact__comma', { rotation: -10, transformOrigin: '50% 0%', duration: 0.18, yoyo: true, repeat: 1, ease: 'power1.inOut' }, '-=0.62');
-    ST.create({ trigger: '.contact', start: 'top 80%', end: 'bottom top', onToggle: (self) => (self.isActive ? bounce.play() : bounce.pause()) });
 
     // Stopka – kropka zamienia się w średnik
     const clip = $('.foot__clip');
@@ -426,39 +365,6 @@
     input.addEventListener('focus', () => label.classList.toggle('has-focus', input.matches(':focus-visible')));
     input.addEventListener('blur', () => label.classList.remove('has-focus'));
   });
-
-  /* ---------- Karty oferty – światło za kursorem ---------- */
-  if (FINE) {
-    $$('[data-card]').forEach((card) => {
-      card.addEventListener('pointermove', (e) => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', `${e.clientX - r.left}px`);
-        card.style.setProperty('--my', `${e.clientY - r.top}px`);
-      });
-    });
-  }
-
-  /* ---------- Przyciski „magnetyczne” ---------- */
-  if (ANIM && FINE) {
-    $$('[data-magnetic]').forEach((btn) => {
-      const label = $('.btn__label', btn);
-      const bx = G.quickTo(btn, 'x', { duration: 0.6, ease: 'power3.out' });
-      const by = G.quickTo(btn, 'y', { duration: 0.6, ease: 'power3.out' });
-      const lx = label && G.quickTo(label, 'x', { duration: 0.6, ease: 'power3.out' });
-      const ly = label && G.quickTo(label, 'y', { duration: 0.6, ease: 'power3.out' });
-      btn.addEventListener('pointermove', (e) => {
-        const r = btn.getBoundingClientRect();
-        const dx = e.clientX - (r.left + r.width / 2);
-        const dy = e.clientY - (r.top + r.height / 2);
-        bx(dx * 0.22); by(dy * 0.32);
-        if (lx) { lx(dx * 0.08); ly(dy * 0.12); }
-      });
-      btn.addEventListener('pointerleave', () => {
-        G.to(btn, { x: 0, y: 0, duration: 0.9, ease: 'elastic.out(1, 0.4)', overwrite: true });
-        label && G.to(label, { x: 0, y: 0, duration: 0.9, ease: 'elastic.out(1, 0.4)', overwrite: true });
-      });
-    });
-  }
 
   /* ---------- FAQ – płynne rozwijanie ---------- */
   $$('[data-faq] details').forEach((det) => {
