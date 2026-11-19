@@ -184,7 +184,7 @@
     // Makieta zmienia się, gdy tytuł kroku wjedzie w dolną część ekranu –
     // wtedy tekst poprzedniego kroku właśnie z niego znika, więc na ekranie
     // nigdy nie zostaje sam wyszarzony opis.
-    let line = innerHeight * 0.72;
+    let line = innerHeight * 0.67;
     if (mqMobile.matches) {
       const top = Math.max(0, storyVisual.getBoundingClientRect().bottom);
       line = top + (innerHeight - top) * 0.66;
@@ -275,7 +275,6 @@
   }
   setIndexes('.checks');
   setIndexes('.offer');
-  setIndexes('.always');
   setIndexes('.faq');
   $$('.checks .check').forEach((c, i) => c.style.setProperty('--i', i));
 
@@ -288,7 +287,7 @@
         io.unobserve(en.target);
       });
     }, { rootMargin: '0px 0px -12% 0px' });
-    $$('[data-note], [data-reveal], .checks, .offer, .always, .faq, [data-hl="scroll"]').forEach((el) => io.observe(el));
+    $$('[data-note], [data-reveal], .checks, .offer, .faq, [data-hl="scroll"]').forEach((el) => io.observe(el));
   } else {
     $$('[data-hl="scroll"]').forEach((h) => h.classList.add('is-on'));
   }
@@ -365,13 +364,6 @@
     $$('.process__step').forEach((s) => {
       ST.create({ trigger: s, start: 'top 66%', onEnter: () => s.classList.add('is-on'), onLeaveBack: () => s.classList.remove('is-on') });
     });
-
-    // Obracająca się plakietka
-    G.to('[data-badge] > svg:first-child', {
-      rotation: 360, ease: 'none', transformOrigin: '50% 50%',
-      scrollTrigger: { trigger: '[data-badge]', start: 'top bottom', end: 'bottom top', scrub: 0.6 },
-    });
-    G.from('.badge__semi', { scale: 0, rotation: -30, duration: 0.9, ease: 'back.out(2.5)', scrollTrigger: { trigger: '[data-badge]', start: 'top 85%', once: true } });
 
     // Kontakt – wielki średnik: paralaksa i podskakująca kropka
     const semi = $('[data-contact-semi]');
